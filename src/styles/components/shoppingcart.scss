@@ -1,0 +1,172 @@
+.shopping-cart-container {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .shopping-cart-header {
+    font-size: $x-large;
+    font-weight: 300;
+    text-align: center;
+    padding-bottom: 0.75rem;
+
+    width: 90%;
+  }
+
+  .shopping-cart-section {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+    margin-top: 2%;
+
+    .cart-items-section {
+      width: 75%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      table {
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        thead {
+          width: 93%;
+          padding: 1.5rem 1rem;
+          border-bottom: 1px solid black;
+          tr {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .product-header {
+              width: 50%;
+              text-align: left;
+              padding-left: 10%;
+            }
+            .price-header {
+              width: 10%;
+              text-align: center;
+            }
+            .quant-header {
+              width: 10%;
+              text-align: center;
+            }
+            .total-header {
+              width: 10%;
+              text-align: left;
+            }
+          }
+        }
+        tbody {
+          width: 95%;
+          padding: 0.5rem 0.25rem;
+
+          .cart-product-row {
+            width: 100%;
+            border-bottom: 1px solid black;
+            padding: 1.5rem 0.25rem;
+            display: flex;
+            align-items: center;
+            .prod-remove {
+              width: 5%;
+            }
+            .prod-image-item {
+              width: 10%;
+              .image {
+                width: 90%;
+              }
+            }
+            .prod-name {
+              width: 50%;
+              max-width: 50%;
+              padding-left: 1rem;
+            }
+            .prod-price {
+              width: 15%;
+              max-width: 15%;
+              text-align: left;
+            }
+            .prod-quant {
+              width: 15%;
+              .counter {
+                width: 90%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                border: 1px solid #c5c5c5;
+                padding: 0.5rem 1rem;
+                border-radius: 1rem;
+                .quant-btn {
+                  width: 20%;
+                  font-size: 1.5rem;
+                  border: none;
+                  background-color: transparent;
+                  font-weight: 300;
+                  cursor: pointer;
+                }
+                .quant-val {
+                  width: 40%;
+                  font-size: 0.95rem;
+                  text-align: center;
+                  margin-bottom: -0.1rem;
+                }
+              }
+            }
+            .prod-total {
+              width: 15%;
+              text-align: center;
+              color: $dark-accent-color;
+            }
+          }
+        }
+      }
+    }
+
+    .cart-total-section {
+      width: 25%;
+      height: 70%;
+      border: 1px solid #c5c5c5;
+      padding: 1rem 2rem;
+      border-radius: 0.2rem;
+      display: flex;
+      flex-direction: column;
+
+      h3 {
+        font-size: $medium;
+        font-weight: 300;
+      }
+      .total-container {
+        width: 100%;
+        margin-top: 10%;
+        .subtotal {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          padding-bottom: 1rem;
+          border-bottom: 1px solid #c5c5c5;
+        }
+        .total {
+          margin-top: 10%;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          font-size: $medium;
+        }
+        .total-blue-text {
+          color: $dark-accent-color;
+        }
+      }
+      .proceed-checkout {
+        width: 90%;
+        margin: 7% auto;
+        background-color: $dark-accent-color;
+        border: none;
+        outline: none;
+        font-size: 0.8rem;
+        color: #fff;
+        padding: 0.5rem 2rem;
+        border-radius: 1rem;
+      }
+    }
+  }
+}

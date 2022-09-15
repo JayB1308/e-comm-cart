@@ -1,0 +1,132 @@
+.table-container {
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  thead {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+    tr {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      border-bottom: 2px solid black;
+      padding: 1rem 0.5rem;
+      gap: 1.5rem;
+      text-align: center;
+      .image-header {
+        width: 10%;
+      }
+      .name-header {
+        width: 25%;
+      }
+      .color-header {
+        width: 10%;
+      }
+      .stock-header {
+        width: 20%;
+      }
+      .price-header {
+        width: 10%;
+      }
+      .buy-header {
+        width: 15%;
+        text-align: right;
+        padding-right: 1rem;
+      }
+    }
+  }
+  tbody {
+    width: 90%;
+  }
+  .product-row {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0.25rem 0.5rem;
+    margin-top: 1rem;
+    .row-product-image {
+      width: 10%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .product-image {
+        width: 90%;
+      }
+    }
+    .product-name {
+      max-width: 25%;
+      width: 25%;
+      color: $font-color-imp;
+      font-size: $regular;
+      text-decoration: underline;
+    }
+    .product-color {
+      max-width: 10%;
+      width: 10%;
+      font-size: $regular;
+      color: $font-color-imp;
+      text-decoration: underline;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .product-stock {
+      max-width: 20%;
+      width: 20%;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .in-stock {
+        display: flex;
+        color: $success-color;
+        gap: 0.25rem;
+      }
+      .out-stock {
+        display: flex;
+        color: #d00000;
+        gap: 0.25rem;
+      }
+    }
+    .product-price {
+      width: 10%;
+      font-size: $regular;
+      display: flex;
+      justify-content: center;
+    }
+    .buy-row {
+      width: 15%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0rem 0.25rem;
+      gap: 0.5rem;
+      .quant {
+        width: 30%;
+        font-size: $regular;
+        height: 2rem;
+        border: none;
+        border-radius: 0.1rem;
+        padding-left: 0.35rem;
+        padding-right: 0.2rem;
+        outline: none;
+        background-color: #e8e8e8;
+      }
+      .cart-status {
+        display: flex;
+        width: 40%;
+        height: 2rem;
+        padding: 0.4rem 1rem 0.4rem 0.5rem;
+        border-radius: 0.1rem;
+        align-items: center;
+        justify-content: flex-start;
+        background-color: $font-color;
+      }
+    }
+  }
+}
