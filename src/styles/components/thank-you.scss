@@ -1,0 +1,24 @@
+.thank-you-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    font-size: $x-large;
+    color: $success-color;
+  }
+  .home-button {
+    width: 15%;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    background-color: $dark-accent-color;
+    color: #fff;
+    border-radius: 1rem;
+    font-size: $regular;
+    cursor: pointer;
+  }
+}

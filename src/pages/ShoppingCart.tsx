@@ -1,10 +1,12 @@
 import { useRecoilState } from "recoil";
 import { currentProductsState } from "../atoms/index";
 import { useEffect, useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 import data from "../data.json";
 import CartRow from "../components/CartRow";
 const ShoppingCart = () => {
+  let navigate = useNavigate();
+
   const [currentProducts, setCurrentProducts] =
     useRecoilState(currentProductsState);
 
@@ -98,7 +100,14 @@ const ShoppingCart = () => {
               <p className="total-blue-text">${total.toFixed(2)}</p>
             </span>
           </div>
-          <button className="proceed-checkout">PROCEED TO CHECKOUT</button>
+          <button
+            className="proceed-checkout"
+            onClick={() => {
+              navigate("/thank-you");
+            }}
+          >
+            PROCEED TO CHECKOUT
+          </button>
         </div>
       </div>
     </div>
