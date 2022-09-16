@@ -2,29 +2,37 @@ import { useState, useEffect } from "react";
 import Filter from "../components/Filter";
 import Table from "../components/Table";
 import data from "../data.json";
-
+import { useRecoilState } from "recoil";
+import {
+  colorFilterState,
+  categoryFilterState,
+  SearchState,
+} from "../atoms/index";
 const Home = () => {
   const [products, setProducts] = useState<Array<any>>(data);
-  const [colorFilter, setColorFilter] = useState("");
-  const [categoryFilter, setCategoryFilter] = useState("");
-  const [search, setSearch] = useState<string>("");
+  const [colorFilter, setColorFilter] = useRecoilState(colorFilterState);
+  const [categoryFilter, setCategoryFilter] =
+    useRecoilState(categoryFilterState);
+
+  const [search, setSearch] = useRecoilState(SearchState);
 
   useEffect(() => {
-    if (categoryFilter !== "" && categoryFilter !== undefined) {
+    let temp_products = products;
+    if (categoryFilter !== "Category") {
       setProducts(
-        products.filter((product) => {
+        data.filter((product) => {
           return product.category === categoryFilter;
         })
       );
     }
-    if (colorFilter !== "" && colorFilter !== undefined) {
+    if (colorFilter !== "Color" && colorFilter !== undefined) {
       setProducts(
-        products.filter((product) => {
+        data.filter((product) => {
           return product.color === colorFilter;
         })
       );
     }
-    if (colorFilter === "" && categoryFilter === "") {
+    if (colorFilter === "Color" && categoryFilter === "Category") {
       setProducts(data);
     }
     if (search !== "") {
@@ -46,6 +54,8 @@ const Home = () => {
         setColor={setColorFilter}
         setSearch={setSearch}
         search={search}
+        category={categoryFilter}
+        color={colorFilter}
       />
       <Table products={products} />
     </div>

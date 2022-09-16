@@ -28,8 +28,19 @@ const ShoppingCart = () => {
       });
       return newState;
     });
+    setCurrentProducts((prev: any) => {
+      const newState = prev.map((ele: any) => {
+        if (ele.id === id) {
+          return { ...ele, quantity: quant };
+        }
+        return ele;
+      });
+      return newState;
+    });
     calculate_total();
   };
+
+  console.log(currentProducts);
 
   const calculate_total = () => {
     let total_price = 0;

@@ -6,9 +6,18 @@ interface FilterProps {
   setCategory: Dispatch<SetStateAction<any>>;
   setSearch: Dispatch<SetStateAction<any>>;
   search: string;
+  color: string;
+  category: string;
 }
 
-const Filter = ({ setColor, setCategory, setSearch, search }: FilterProps) => {
+const Filter = ({
+  setColor,
+  setCategory,
+  setSearch,
+  search,
+  color,
+  category,
+}: FilterProps) => {
   let navigate = useNavigate();
 
   return (
@@ -16,13 +25,12 @@ const Filter = ({ setColor, setCategory, setSearch, search }: FilterProps) => {
       <div className="filter-dropdown-section">
         <select
           className="filter-select"
+          value={category}
           onChange={(e) => {
             setCategory(e.target.value);
           }}
         >
-          <option value="" disabled>
-            Category
-          </option>
+          <option value="">Category</option>
           <option className="filter-select-option" value="T-shirts">
             T-Shirts
           </option>
@@ -31,11 +39,12 @@ const Filter = ({ setColor, setCategory, setSearch, search }: FilterProps) => {
         </select>
         <select
           className="filter-select"
+          value={color}
           onChange={(e) => {
             setColor(e.target.value);
           }}
         >
-          <option disabled>Color</option>
+          <option value="">Color</option>
           <option value="black">Black</option>
           <option value="white">White</option>
           <option value="cream">Cream</option>
@@ -46,8 +55,8 @@ const Filter = ({ setColor, setCategory, setSearch, search }: FilterProps) => {
         <p
           className="reset-filter"
           onClick={() => {
-            setCategory("");
-            setColor("");
+            setCategory("Category");
+            setColor("Color");
             setSearch("");
           }}
         >

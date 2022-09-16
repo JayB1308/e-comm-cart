@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BsCart3, BsFillEmojiSmileFill } from "react-icons/bs";
 import { BiSad } from "react-icons/bi";
 import { useRecoilState } from "recoil";
@@ -34,6 +34,15 @@ const Product = ({ product }: ProductProps) => {
       setCurrentProducts([...currentProducts, newCurrentProduct]);
     }
   };
+
+  useEffect(() => {
+    currentProducts.forEach((ele: any) => {
+      if (ele.id === product.id) {
+        setQuantity(ele.quantity);
+        setIsSelected(true);
+      }
+    });
+  }, []);
 
   return (
     <tr className="product-row">
@@ -76,8 +85,8 @@ const Product = ({ product }: ProductProps) => {
         <input
           type="checkbox"
           className="add-check"
-          defaultChecked={isSelected}
-          onClick={() => {
+          checked={isSelected}
+          onChange={() => {
             setIsSelected(!isSelected);
             addProduct();
           }}
