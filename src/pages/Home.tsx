@@ -35,6 +35,17 @@ const Home = () => {
     if (colorFilter === "Color" && categoryFilter === "Category") {
       setProducts(data);
     }
+
+    if (colorFilter !== "Color" && categoryFilter !== "Category") {
+      setProducts(
+        data.filter((product) => {
+          return (
+            product.color === colorFilter && product.category === categoryFilter
+          );
+        })
+      );
+    }
+
     if (search !== "") {
       const searchTerm = search.toLowerCase();
       let searchResults: any = [];
